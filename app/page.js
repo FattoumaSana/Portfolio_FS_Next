@@ -1,95 +1,84 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Head from "next/head";
+import Link from "next/link";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    return (
+        <div>
+            <Head>
+                <title>
+                    Fattouma Sana | Experte Web Marketing & Développeuse Full Stack
+                </title>
+                <meta
+                    name="description"
+                    content="Portfolio de Fattouma Sana, experte en web marketing et développeuse full stack. Découvrez mes projets, compétences et expériences."
+                />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+            <header className={styles.header}>
+                <div className={styles.parallaxBg}></div>
+                <div className={styles.headerContent}>
+                    <h1>Fattouma Sana</h1>
+                    <p>Experte Web Marketing & Développeuse Full Stack</p>
+                    <Link href="/projets" className={styles.cta}>
+                        Découvrir mes projets
+                    </Link>
+                </div>
+            </header>
+
+            <main className={styles.main}>
+                <section className={styles.intro}>
+                    <h2>Bienvenue !</h2>
+                    <p>
+                        Passionnée par le digital et le développement web, j'aide les
+                        entreprises à atteindre leurs objectifs en ligne. Forte de mon
+                        expérience en web marketing et de mes compétences en développement
+                        full stack, je suis capable de concevoir et de mettre en œuvre des
+                        solutions web complètes et performantes.
+                    </p>
+                </section>
+
+                <section className={styles.skills}>
+                    <h2>Mes compétences</h2>
+                    <div className={styles.skillsGrid}>
+                        <div className={styles.skill}>
+                            <img src="/images/html.png" alt="HTML5" />
+                            <h3>HTML5</h3>
+                        </div>
+                        <div className={styles.skill}>
+                            <img src="/images/css.png" alt="CSS3" />
+                            <h3>CSS3</h3>
+                        </div>
+                        <div className={styles.skill}>
+                            <img src="/images/javascript.png" alt="JavaScript" />
+                            <h3>JavaScript</h3>
+                        </div>
+                        <div className={styles.skill}>
+                            <img src="/images/react.png" alt="React" />
+                            <h3>React</h3>
+                        </div>
+                        {/* Ajoute d'autres compétences (PHP, Symfony, WordPress, etc.) */}
+                    </div>
+                </section>
+
+                <section className={styles.projectsPreview}>
+                    <h2>Derniers projets</h2>
+                    <div className={styles.projectsGrid}>
+                        {/* Affiche ici un aperçu de tes projets (images, titres, descriptions courtes) */}
+                        <div className={styles.project}>
+                            <img src="/images/projet1.jpg" alt="Projet 1" />
+                            <h3>Nom du projet 1</h3>
+                            <p>Description courte du projet 1.</p>
+                            <Link href="/projets/projet1">Voir le projet</Link>
+                        </div>
+                        {/* Ajoute d'autres projets */}
+                    </div>
+                    <Link href="/projets" className={styles.allProjectsLink}>
+                        Voir tous les projets
+                    </Link>
+                </section>
+            </main>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    );
 }
