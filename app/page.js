@@ -1,84 +1,38 @@
-import Head from "next/head";
-import Link from "next/link";
-import styles from "../styles/Home.module.css";
+import Link from 'next/link';
 
 export default function Home() {
-    return (
-        <div>
-            <Head>
-                <title>
-                    Fattouma Sana | Experte Web Marketing & Développeuse Full Stack
-                </title>
-                <meta
-                    name="description"
-                    content="Portfolio de Fattouma Sana, experte en web marketing et développeuse full stack. Découvrez mes projets, compétences et expériences."
-                />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-
-            <header className={styles.header}>
-                <div className={styles.parallaxBg}></div>
-                <div className={styles.headerContent}>
-                    <h1>Fattouma Sana</h1>
-                    <p>Experte Web Marketing & Développeuse Full Stack</p>
-                    <Link href="/projets" className={styles.cta}>
-                        Découvrir mes projets
-                    </Link>
-                </div>
-            </header>
-
-            <main className={styles.main}>
-                <section className={styles.intro}>
-                    <h2>Bienvenue !</h2>
-                    <p>
-                        Passionnée par le digital et le développement web, j'aide les
-                        entreprises à atteindre leurs objectifs en ligne. Forte de mon
-                        expérience en web marketing et de mes compétences en développement
-                        full stack, je suis capable de concevoir et de mettre en œuvre des
-                        solutions web complètes et performantes.
-                    </p>
-                </section>
-
-                <section className={styles.skills}>
-                    <h2>Mes compétences</h2>
-                    <div className={styles.skillsGrid}>
-                        <div className={styles.skill}>
-                            <img src="/images/html.png" alt="HTML5" />
-                            <h3>HTML5</h3>
-                        </div>
-                        <div className={styles.skill}>
-                            <img src="/images/css.png" alt="CSS3" />
-                            <h3>CSS3</h3>
-                        </div>
-                        <div className={styles.skill}>
-                            <img src="/images/javascript.png" alt="JavaScript" />
-                            <h3>JavaScript</h3>
-                        </div>
-                        <div className={styles.skill}>
-                            <img src="/images/react.png" alt="React" />
-                            <h3>React</h3>
-                        </div>
-                        {/* Ajoute d'autres compétences (PHP, Symfony, WordPress, etc.) */}
-                    </div>
-                </section>
-
-                <section className={styles.projectsPreview}>
-                    <h2>Derniers projets</h2>
-                    <div className={styles.projectsGrid}>
-                        {/* Affiche ici un aperçu de tes projets (images, titres, descriptions courtes) */}
-                        <div className={styles.project}>
-                            <img src="/images/projet1.jpg" alt="Projet 1" />
-                            <h3>Nom du projet 1</h3>
-                            <p>Description courte du projet 1.</p>
-                            <Link href="/projets/projet1">Voir le projet</Link>
-                        </div>
-                        {/* Ajoute d'autres projets */}
-                    </div>
-                    <Link href="/projets" className={styles.allProjectsLink}>
-                        Voir tous les projets
-                    </Link>
-                </section>
-            </main>
+  return (
+    <div>
+      <div className="p-5 mb-4 bg-light rounded-3">
+        <div className="container-fluid py-5">
+          <h1 className="display-5 fw-bold">Fattouma Sana</h1>
+          <p className="col-md-8 fs-4">Experte Web Marketing & Développeuse Full Stack</p>
+          <Link href="/contact" className="btn btn-primary btn-lg">
+            Me contacter
+          </Link>
         </div>
-    );
+      </div>
+
+      <div className="row align-items-md-stretch">
+        <div className="col-md-6">
+          <div className="h-100 p-5 text-bg-dark rounded-3">
+            <h2>Mes Services</h2>
+            <p>Découvrez mes services en web marketing et développement.</p>
+            <Link href="/services" className="btn btn-outline-light">
+              Voir les services
+            </Link>
+          </div>
+        </div>
+        <div className="col-md-6">
+          <div className="h-100 p-5 bg-light border rounded-3">
+            <h2>Mes Projets</h2>
+            <p>Un aperçu de mes réalisations les plus récentes.</p>
+            <Link href="/projets" className="btn btn-outline-secondary">
+              Voir les projets
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
