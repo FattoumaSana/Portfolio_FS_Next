@@ -1,3 +1,4 @@
+"use client"; 
 import Head from 'next/head';
 import styles from './Contact.module.css';
 import { useState } from 'react';
@@ -18,15 +19,13 @@ export default function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Ici, vous pouvez ajouter la logique pour envoyer le formulaire, par exemple, via une API ou un service d'email.
         console.log('Formulaire soumis:', formData);
-        // Réinitialiser le formulaire après la soumission réussie
         setFormData({
             name: '',
             email: '',
             message: '',
         });
-        // Vous pourriez également ajouter un message de confirmation à l'utilisateur ici.
+        alert('Merci pour votre message ! Je vous répondrai dès que possible.');
     };
 
     return (
