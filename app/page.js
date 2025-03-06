@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
-import './global.css' 
+import './globals.css'
 import styles from './Home.module.css';
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
 
