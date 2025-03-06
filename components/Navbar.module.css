@@ -2,23 +2,143 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
+    padding: 1.5rem 2rem;
+    /* Augmente le padding pour un aspect plus aéré */
+    background-color: #ffffff;
+    /* Fond blanc pour un design épuré */
+    color: #333;
+    /* Couleur du texte sombre pour un bon contraste */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Ajoute une légère ombre pour la profondeur */
+    position: sticky;
+    /* rend la nav bar sticky en haut de l'écran */
+    top: 0;
+    z-index: 100;
+    /* Assure que la barre de navigation reste au-dessus des autres éléments */
 }
 
 .logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: white;
+    font-weight: 600;
+    /* Légèrement moins gras pour un aspect plus moderne */
+    font-size: 1.6rem;
+    /* Taille de police légèrement augmentée */
+    color: #2E4053;
+    /* Couleur plus professionnelle pour le logo */
+    text-decoration: none;
+    /* Supprime le soulignement par défaut */
+    transition: color 0.3s ease;
+    /* Transition pour l'effet de survol */
+}
+
+.logo:hover {
+    color: #4CAF50;
+    /* Couleur d'accent au survol */
 }
 
 .navLinks {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
+    /* Augmente l'espace entre les liens */
 }
 
 .navLinks a {
-    color: white;
+    color: #333;
+    /* Couleur du texte sombre */
     text-decoration: none;
+    font-weight: 500;
+    /* Poids de police semi-gras pour une meilleure lisibilité */
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    /* Ajoute un peu de padding pour les zones cliquables */
+    border-radius: 5px;
+    /* Ajoute des bords arrondis pour un aspect plus doux */
+}
+
+.navLinks a:hover,
+.navLinks a:focus {
+    color: #4CAF50;
+    /* Couleur d'accent au survol */
+    background-color: #f0f0f0;
+    /* Légère couleur de fond au survol */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+        /* Cache les liens de navigation sur les petits écrans */
+    }
+
+    .hamburger {
+        display: none;
+        /* Caché par défaut sur les grands écrans */
+        flex-direction: column;
+        justify-content: space-around;
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 100%;
+        height: 0.25rem;
+        background-color: #333;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    /* Styles pour l'animation du hamburger */
+    .open:nth-child(1) {
+        transform: rotate(45deg) translate(0.4rem, 0.5rem);
+    }
+
+    .open:nth-child(2) {
+        opacity: 0;
+    }
+
+    .open:nth-child(3) {
+        transform: rotate(-45deg) translate(0.4rem, -0.5rem);
+    }
+
+    .navLinks {
+        /* ... (styles existants) ... */
+        display: flex;
+        flex-direction: column;
+        /* Disposition en colonne sur les petits écrans */
+        position: absolute;
+        /* Position absolue pour le menu déroulant */
+        top: 4.5rem;
+        /* Ajustez selon la hauteur de votre barre de navigation */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        transform: translateY(-100%);
+        /* Cache le menu par défaut */
+        transition: transform 0.3s ease;
+    }
+
+    .navLinks.active {
+        transform: translateY(0);
+        /* Affiche le menu lorsque la classe active est ajoutée */
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .navLinks {
+            display: none;
+            /* Cache les liens par défaut sur les petits écrans */
+        }
+
+        .hamburger {
+            display: flex;
+            /* Affiche le bouton hamburger sur les petits écrans */
+        }
+
+        /* Affiche les liens lorsque le menu est ouvert */
+        .navLinks.active {
+            display: flex;
+        }
+    }
 }

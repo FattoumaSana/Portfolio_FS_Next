@@ -1,13 +1,55 @@
 .footer {
-    background-color: #f0f0f0;
-    padding: 1rem;
+    background-color: #f8f8f8;
+    /* Fond légèrement grisé pour un aspect doux */
+    padding: 2rem 1rem;
+    /* Padding augmenté pour un aspect plus aéré */
     text-align: center;
+    border-top: 1px solid #eaeaea;
+    /* Ajoute une bordure supérieure subtile */
+}
+
+.footer p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
 }
 
 .social {
-    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    /* Augmente l'espace entre les icônes */
+    margin-bottom: 1rem;
 }
 
 .social a {
-    margin: 0 0.5rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.2rem;
+    /* Taille des icônes légèrement augmentée */
+    padding: 0.5rem;
+    /* Ajoute un peu de padding pour les zones cliquables */
+    border-radius: 50%;
+    /* Rend les icônes rondes */
+    display: inline-flex;
+    /* Utilise inline-flex pour centrer les icônes */
+    align-items: center;
+    justify-content: center;
+}
+
+.social a:hover {
+    color: #4CAF50;
+    /* Couleur d'accent au survol */
+    background-color: #eaeaea;
+    /* Légère couleur de fond au survol */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .social {
+        flex-direction: column;
+        /* Disposition en colonne sur les petits écrans */
+        align-items: center;
+    }
 }
